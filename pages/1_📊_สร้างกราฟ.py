@@ -88,7 +88,7 @@ REGION_PROVINCES = {
 st.title("📊 กราฟวิเคราะห์ข้อมูล")
 st.markdown("""
 เลือกแหล่งข้อมูล → เลือกแท็บเพื่อดูกราฟวิเคราะห์  
-> 📱 Line Contact Insights · 📍 แผนที่จังหวัด · 📊 สร้างกราฟเอง
+> 📱 การวิเคราะห์ตามเวลา · 📍การวิเคราะห์ตามพื้นที่  · 📊 การวิเคราะห์ทั่วไป 
 """)
 
 st.divider()
@@ -200,16 +200,16 @@ if df is not None and not df.empty:
     # 3 Tabs
     # ═══════════════════════════════════════════════════════
     tab1, tab2, tab3 = st.tabs([
-        "📱 Line Contact Insights",
-        "📍 แผนที่จังหวัด",
-        "📊 สร้างกราฟเอง",
+        "📱การวิเคราะห์ตามเวลา ",
+        "📍การวิเคราะห์ตามพื้นที่ ",
+        "📊การวิเคราะห์ทั่วไป ",
     ])
 
     # ═══════════════════════════════════════════════════════
-    # TAB 1: Line Contact Insights
+    # TAB 1: การวิเคราะห์ตามเวลา
     # ═══════════════════════════════════════════════════════
     with tab1:
-        st.markdown('<p class="tab-header">📱 Line Contact Insights</p>', unsafe_allow_html=True)
+        st.markdown('<p class="tab-header">📱 การวิเคราะห์ตามเวลา </p>', unsafe_allow_html=True)
 
         has_date = date_col is not None and df[date_col].notna().any()
         has_line = line_col is not None
@@ -460,7 +460,7 @@ if df is not None and not df.empty:
     # TAB 2: Province Map
     # ═══════════════════════════════════════════════════════
     with tab2:
-        st.markdown('<p class="tab-header">📍 แผนที่จังหวัด — จำนวนโพสต์ตามจังหวัด</p>', unsafe_allow_html=True)
+        st.markdown('<p class="tab-header">📍การวิเคราะห์ตามพื้นที่  — จำนวนโพสต์ตามจังหวัด</p>', unsafe_allow_html=True)
 
         if not province_col:
             st.warning("⚠️ ไม่พบคอลัมน์ Province ในข้อมูล — กรุณาอัปโหลดไฟล์ที่ผ่านการสกัดจังหวัดแล้ว")
@@ -754,7 +754,7 @@ if df is not None and not df.empty:
     # TAB 3: Custom Charts
     # ═══════════════════════════════════════════════════════
     with tab3:
-        st.markdown('<p class="tab-header">📊 สร้างกราฟเอง — เลือกคอลัมน์ + ประเภทกราฟ</p>', unsafe_allow_html=True)
+        st.markdown('<p class="tab-header">📊 การวิเคราะห์ทั่วไป  — เลือกคอลัมน์ + ประเภทกราฟ</p>', unsafe_allow_html=True)
 
         col_left, col_right = st.columns(2)
 
